@@ -1,4 +1,4 @@
-
+import java.util.PriorityQueue;
 
 /**
  * 寻找数组中第K大的值
@@ -8,6 +8,17 @@ public class FindKthLargest {
 
         int nums[] = new int[]{3,2,1,5,6,4};
         int k = 2;
+        // 使用堆进行选择
+        PriorityQueue<Integer> q = new PriorityQueue<>();
+        for (int num : nums) {
+            q.offer(num);
+            if (q.size() > k){
+                q.poll();
+            }
+        }
+        System.out.println(q.peek());
+
+        // 使用快排选择
         quickSort(nums,0,nums.length-1);
         for (int i = 0; i < nums.length; i++) {
             System.out.println(nums[i]);
