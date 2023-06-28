@@ -29,11 +29,13 @@ public class RandomizedSet {
 
     public int getRandom() {
         int len = list.size();
+        System.out.println(list.hashCode());
         Random rand = new Random();
         return list.get(rand.nextInt(len));
     }
 
     public static void main(String[] args) {
+
         RandomizedSet randomizedSet = new RandomizedSet();
         randomizedSet.insert(1); // 向集合中插入 1 。返回 true 表示 1 被成功地插入。
         randomizedSet.remove(2); // 返回 false ，表示集合中不存在 2 。
