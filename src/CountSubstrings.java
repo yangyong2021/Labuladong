@@ -1,6 +1,6 @@
 public class CountSubstrings {
     public static void main(String[] args) {
-        String s = "aaa";
+        String s = "abc";
         int ans = countSubstrings(s);
         System.out.println(ans);
     }
@@ -16,7 +16,7 @@ public class CountSubstrings {
                     if (j - i <= 1) {
                         dp[i][j] = true;
                         ans++;
-                    } else if (dp[i + 1][j - 1] == true) {
+                    } else if (dp[i + 1][j - 1]) {
                         dp[i][j] = true;
                         ans++;
                     }
